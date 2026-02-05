@@ -1,6 +1,8 @@
-export async function hashPassword(password: string): Promise<string> {
+import bcrypt from 'bcrypt';
+
+export function hashPassword(password: string): Promise<string> {
   // Simple hash function for testing (not for production use)
-  return `hashed_${password}`;
+  return bcrypt.hash(`hashed_${password}`);
 }
 
 export function getPasswordMessage(): string {
