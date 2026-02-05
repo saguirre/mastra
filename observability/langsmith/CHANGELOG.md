@@ -1,5 +1,41 @@
 # @mastra/langsmith
 
+## 1.1.0-alpha.0
+
+### Minor Changes
+
+- Added `withLangsmithMetadata` helper for dynamic LangSmith configuration per-span. ([#12690](https://github.com/mastra-ai/mastra/pull/12690))
+
+  **Why:** Previously, `projectName` could only be set globally in the exporter config. Users needed to dynamically route traces to different LangSmith projects based on runtime conditions (e.g., customer tier, environment).
+
+  **Before:**
+
+  ```typescript
+  const tracingOptions = buildTracingOptions();
+  // No way to override projectName per-span
+  ```
+
+  **After:**
+
+  ```typescript
+  import { buildTracingOptions } from '@mastra/observability';
+  import { withLangsmithMetadata } from '@mastra/langsmith';
+
+  const tracingOptions = buildTracingOptions(
+    withLangsmithMetadata({
+      projectName: 'enterprise-traces',
+      sessionId: 'user-123',
+    }),
+  );
+  ```
+
+  Follows the same pattern as `withLangfusePrompt` in the Langfuse exporter.
+
+### Patch Changes
+
+- Updated dependencies [[`717ffab`](https://github.com/mastra-ai/mastra/commit/717ffab42cfd58ff723b5c19ada4939997773004), [`aa95f95`](https://github.com/mastra-ai/mastra/commit/aa95f958b186ae5c9f4219c88e268f5565c277a2), [`e4569c5`](https://github.com/mastra-ai/mastra/commit/e4569c589e00c4061a686c9eb85afe1b7050b0a8), [`a211248`](https://github.com/mastra-ai/mastra/commit/a21124845b1b1321b6075a8377c341c7f5cda1b6)]:
+  - @mastra/core@1.3.0-alpha.1
+
 ## 1.0.2
 
 ### Patch Changes

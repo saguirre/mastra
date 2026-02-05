@@ -1,5 +1,14 @@
 # @mastra/braintrust
 
+## 1.0.3-alpha.0
+
+### Patch Changes
+
+- dependencies updates: ([#11646](https://github.com/mastra-ai/mastra/pull/11646))
+  - Updated dependency [`braintrust@^2.2.0` ↗︎](https://www.npmjs.com/package/braintrust/v/2.2.0) (from `^1.1.0`, in `dependencies`)
+- Updated dependencies [[`717ffab`](https://github.com/mastra-ai/mastra/commit/717ffab42cfd58ff723b5c19ada4939997773004), [`aa95f95`](https://github.com/mastra-ai/mastra/commit/aa95f958b186ae5c9f4219c88e268f5565c277a2), [`e4569c5`](https://github.com/mastra-ai/mastra/commit/e4569c589e00c4061a686c9eb85afe1b7050b0a8), [`a211248`](https://github.com/mastra-ai/mastra/commit/a21124845b1b1321b6075a8377c341c7f5cda1b6)]:
+  - @mastra/core@1.3.0-alpha.1
+
 ## 1.0.2
 
 ### Patch Changes

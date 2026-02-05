@@ -1,5 +1,14 @@
 # @mastra/evals
 
+## 1.1.1-alpha.0
+
+### Patch Changes
+
+- Fixed LLM scorer schema compatibility with Anthropic API by replacing z.number().min(0).max(1) with z.number().refine() for score validation. The min/max constraints were being converted to JSON Schema minimum/maximum properties which some providers don't support. ([#12722](https://github.com/mastra-ai/mastra/pull/12722))
+
+- Updated dependencies [[`717ffab`](https://github.com/mastra-ai/mastra/commit/717ffab42cfd58ff723b5c19ada4939997773004), [`aa95f95`](https://github.com/mastra-ai/mastra/commit/aa95f958b186ae5c9f4219c88e268f5565c277a2), [`e4569c5`](https://github.com/mastra-ai/mastra/commit/e4569c589e00c4061a686c9eb85afe1b7050b0a8), [`a211248`](https://github.com/mastra-ai/mastra/commit/a21124845b1b1321b6075a8377c341c7f5cda1b6)]:
+  - @mastra/core@1.3.0-alpha.1
+
 ## 1.1.0
 
 ### Minor Changes

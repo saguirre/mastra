@@ -1,5 +1,53 @@
 # @mastra/playground-ui
 
+## 9.1.0-alpha.1
+
+### Minor Changes
+
+- Update peer dependencies to match core package version bump (1.1.0) ([#12508](https://github.com/mastra-ai/mastra/pull/12508))
+
+### Patch Changes
+
+- dependencies updates: ([#11750](https://github.com/mastra-ai/mastra/pull/11750))
+  - Updated dependency [`@assistant-ui/react@^0.12.3` ↗︎](https://www.npmjs.com/package/@assistant-ui/react/v/0.12.3) (from `^0.11.47`, in `dependencies`)
+  - Updated dependency [`@assistant-ui/react-markdown@^0.12.1` ↗︎](https://www.npmjs.com/package/@assistant-ui/react-markdown/v/0.12.1) (from `^0.11.6`, in `dependencies`)
+  - Updated dependency [`@assistant-ui/react-syntax-highlighter@^0.12.1` ↗︎](https://www.npmjs.com/package/@assistant-ui/react-syntax-highlighter/v/0.12.1) (from `^0.11.6`, in `dependencies`)
+
+- dependencies updates: ([#11829](https://github.com/mastra-ai/mastra/pull/11829))
+  - Updated dependency [`@codemirror/autocomplete@^6.20.0` ↗︎](https://www.npmjs.com/package/@codemirror/autocomplete/v/6.20.0) (from `^6.18.0`, in `dependencies`)
+  - Updated dependency [`@codemirror/lang-javascript@^6.2.4` ↗︎](https://www.npmjs.com/package/@codemirror/lang-javascript/v/6.2.4) (from `^6.2.2`, in `dependencies`)
+  - Updated dependency [`@codemirror/state@^6.5.4` ↗︎](https://www.npmjs.com/package/@codemirror/state/v/6.5.4) (from `^6.5.2`, in `dependencies`)
+  - Updated dependency [`@codemirror/view@^6.39.12` ↗︎](https://www.npmjs.com/package/@codemirror/view/v/6.39.12) (from `^6.38.6`, in `dependencies`)
+
+- dependencies updates: ([#11830](https://github.com/mastra-ai/mastra/pull/11830))
+  - Updated dependency [`@uiw/codemirror-theme-dracula@^4.25.4` ↗︎](https://www.npmjs.com/package/@uiw/codemirror-theme-dracula/v/4.25.4) (from `^4.23.14`, in `dependencies`)
+
+- dependencies updates: ([#11843](https://github.com/mastra-ai/mastra/pull/11843))
+  - Updated dependency [`@uiw/react-codemirror@^4.25.4` ↗︎](https://www.npmjs.com/package/@uiw/react-codemirror/v/4.25.4) (from `^4.23.14`, in `dependencies`)
+
+- Steps now support an optional `metadata` property for storing arbitrary key-value data. This metadata is preserved through step serialization and is available in the workflow graph, enabling use cases like UI annotations or custom step categorization. ([#12508](https://github.com/mastra-ai/mastra/pull/12508))
+
+  ```diff
+  import { createStep } from "@mastra/core/workflows";
+  import { z } from "zod";
+
+  const step = createStep({
+    //...step information
+  +  metadata: {
+  +    category: "orders",
+  +    priority: "high",
+  +    version: "1.0.0",
+  +  },
+  });
+  ```
+
+  Metadata values must be serializable (no functions or circular references).
+
+- Updated dependencies [[`717ffab`](https://github.com/mastra-ai/mastra/commit/717ffab42cfd58ff723b5c19ada4939997773004), [`aa95f95`](https://github.com/mastra-ai/mastra/commit/aa95f958b186ae5c9f4219c88e268f5565c277a2), [`e4569c5`](https://github.com/mastra-ai/mastra/commit/e4569c589e00c4061a686c9eb85afe1b7050b0a8), [`a211248`](https://github.com/mastra-ai/mastra/commit/a21124845b1b1321b6075a8377c341c7f5cda1b6)]:
+  - @mastra/core@1.3.0-alpha.1
+  - @mastra/client-js@1.2.1-alpha.1
+  - @mastra/react@0.2.2-alpha.1
+
 ## 9.1.0-alpha.0
 
 ### Minor Changes

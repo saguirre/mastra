@@ -1,5 +1,37 @@
 # mastra
 
+## 1.3.0-alpha.1
+
+### Minor Changes
+
+- Update peer dependencies to match core package version bump (1.1.0) ([#12508](https://github.com/mastra-ai/mastra/pull/12508))
+
+### Patch Changes
+
+- Steps now support an optional `metadata` property for storing arbitrary key-value data. This metadata is preserved through step serialization and is available in the workflow graph, enabling use cases like UI annotations or custom step categorization. ([#12508](https://github.com/mastra-ai/mastra/pull/12508))
+
+  ```diff
+  import { createStep } from "@mastra/core/workflows";
+  import { z } from "zod";
+
+  const step = createStep({
+    //...step information
+  +  metadata: {
+  +    category: "orders",
+  +    priority: "high",
+  +    version: "1.0.0",
+  +  },
+  });
+  ```
+
+  Metadata values must be serializable (no functions or circular references).
+
+- Add hints to the `create mastra` CLI on how to use the multiselect prompt. Also remove Codex and OpenCode from initial selection of skills since they support `.agents` now. ([#12717](https://github.com/mastra-ai/mastra/pull/12717))
+
+- Updated dependencies [[`717ffab`](https://github.com/mastra-ai/mastra/commit/717ffab42cfd58ff723b5c19ada4939997773004), [`aa95f95`](https://github.com/mastra-ai/mastra/commit/aa95f958b186ae5c9f4219c88e268f5565c277a2), [`e4569c5`](https://github.com/mastra-ai/mastra/commit/e4569c589e00c4061a686c9eb85afe1b7050b0a8), [`a211248`](https://github.com/mastra-ai/mastra/commit/a21124845b1b1321b6075a8377c341c7f5cda1b6)]:
+  - @mastra/core@1.3.0-alpha.1
+  - @mastra/deployer@1.3.0-alpha.1
+
 ## 1.2.1-alpha.0
 
 ### Patch Changes

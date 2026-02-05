@@ -1,5 +1,37 @@
 # @mastra/core
 
+## 1.3.0-alpha.1
+
+### Minor Changes
+
+- Add native @ai-sdk/groq support to model router. Groq models now use the official AI SDK package instead of falling back to OpenAI-compatible mode. ([#12741](https://github.com/mastra-ai/mastra/pull/12741))
+
+### Patch Changes
+
+- Update provider registry and model documentation with latest models and providers ([`717ffab`](https://github.com/mastra-ai/mastra/commit/717ffab42cfd58ff723b5c19ada4939997773004))
+
+- Fixed sub-agent tool approval and suspend events not being surfaced to the parent agent stream. This enables proper suspend/resume workflows and approval handling when nested agents require tool approvals. ([#12732](https://github.com/mastra-ai/mastra/pull/12732))
+
+  Related to issue `#12552`.
+
+- Steps now support an optional `metadata` property for storing arbitrary key-value data. This metadata is preserved through step serialization and is available in the workflow graph, enabling use cases like UI annotations or custom step categorization. ([#12508](https://github.com/mastra-ai/mastra/pull/12508))
+
+  ```diff
+  import { createStep } from "@mastra/core/workflows";
+  import { z } from "zod";
+
+  const step = createStep({
+    //...step information
+  +  metadata: {
+  +    category: "orders",
+  +    priority: "high",
+  +    version: "1.0.0",
+  +  },
+  });
+  ```
+
+  Metadata values must be serializable (no functions or circular references).
+
 ## 1.2.1-alpha.0
 
 ### Patch Changes
