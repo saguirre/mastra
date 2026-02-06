@@ -1820,7 +1820,7 @@ importers:
   packages/_types-builder:
     dependencies:
       '@microsoft/api-extractor':
-        specifier: ^7.55.2
+        specifier: ^7.56.0
         version: 7.56.0(@types/node@22.19.7)
       globby:
         specifier: ^14.1.0
